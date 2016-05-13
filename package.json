@@ -1,0 +1,8 @@
+{
+    "name": "br.com.cognisense.escoladocerebro",
+    "version": "18.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "schmaedech",
+    "contributors": [],
+    "dependencies": {}
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html>
+    <head>  
+        <title>LookTable</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="author" content="Cognisense Tecnologia Ltda">  
+        <meta name="keywords" content="Games Escola do Cérebro Cognisense Tecnologia UFSC jogos educativos games pesquisa aplicação" /> 
+        <meta name="description" content="Games Escola do Cérebro" />   
+        
+        <link type="text/css" rel="stylesheet" href="css/looktable.css" >
+        <script type="text/javascript" src="lib/jquery-2.0.3.min.js" ></script>
+        <script type="text/javascript" src="lib/ProgressCircle.js"></script>
+        <!--        <script type="text/javascript" src="lib/howler.min.js"></script>
+                <script type="text/javascript" src="js/escola-do-cerebro.audiolib2.js"></script> -->
+        <script type="text/javascript" src="js/looktable.js"></script> 
+        <style type="text/css"> body, html { -webkit-tap-highlight-color: rgba(0,0,0,0); } </style>
+    </head> 
+
+    <body>
+        <div id="divLevels"> 
+            <div class="clevels" onclick="chooseLevel(0)"><img src="img/easy.png" alt="Nível 1"/></div> 
+            <div class="clevels" onclick="chooseLevel(1)"><img src="img/medium.png"  alt="Nível 2"/></div>   
+            <div class="clevels" onclick="chooseLevel(2)"><img src="img/hard.png"  alt="Nível 3"/></div>
+            <div id="btPlay" onclick="playGame()" ><img src="img/jogar.png"  alt="Clique para Jogar"/></div>   
+        </div>
+
+        <div id="wrap">
+            <div id="wrap_menu"> 
+                <table class="wrap_side"> 
+                    <tr>
+                        <td>
+                            <div id="wrap_bonus_plus">
+                                <span>+10</span>
+                            </div>
+                            <div id="wrap_bonus_element"></div>
+                            <div id="wrap_bonus_minus">
+                                <span>-10</span> 
+                            </div>
+                        </td>
+                        <td>
+                            <div id="wrap_bonus">
+                                <div id="wrap_vertical_progress"> </div> 
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div id="wrap_progresse"> </div> 
+            </div>
+            <div id="wrap_table">
+                <div id="container" class="container">  
+                </div>
+            </div>  
+
+        </div> 
+        <div id="console"></div> 
+    </body> 
+
+</html>

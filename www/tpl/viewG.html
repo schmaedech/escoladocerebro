@@ -1,0 +1,57 @@
+<nav class="nav"> 
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 right-bar" >    
+            <button class="btn fa trophy-img {{stateGamer}} card-3" ng-click="goPath('viewT')">AVALIAÇÃO</button> 
+
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title"> 
+            
+            <span class="title-label">  
+                Escolha um caminho! 
+            </span>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 left-bar">  
+            <div class="trophy"> 
+                <span class="h1">  
+                    {{dashboard.ngames}} 
+                </span>
+                <!--                <img class="trophy-img" src="img/icone_trofeu.png" alt=""/>-->
+                <span class="trophy-label">  
+                    JOGADAS
+                </span>
+            </div>
+
+        </div>
+    </div> 
+</nav>
+
+
+<section class="view view-g container" >  
+    <div class="row">       
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view3')"> 
+             
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('viewP')"> 
+             
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view1')">    
+            
+        </div> 
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view4')">       
+            
+        </div> 
+    </div>  
+</section> 
+
+<div class="baloon card card-5 {{hidden}}" ng-click="closeAlert()"> 
+    <div class="baloon-baloon" >  
+        <button class="btn fa fa-close baloon-btn" ng-click="closeAlert()"></button>  
+
+        <span class="baloon-label">   
+            {{message}}                         
+        </span>
+    </div> 
+    <button class="btn fa trophy-img {{stateGamer}} card-3" ng-click="goPath('viewT')">AVALIAÇÃO</button> 
+
+</div>

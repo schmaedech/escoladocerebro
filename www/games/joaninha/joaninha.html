@@ -1,0 +1,345 @@
+<html>	
+    <head>
+        <title>Joaninha</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="author" content="Cognisense Tecnologia Ltda">  
+        <meta name="keywords" content="Games Escola do Cérebro Cognisense Tecnologia UFSC jogos educativos games pesquisa aplicação" /> 
+        <meta name="description" content="Games Escola do Cérebro" />   
+        
+        <style>
+
+            body, html
+            {
+                margin: 0px;
+                padding: 0px;
+                background: transparent; 
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+
+            #game-display
+            {
+                position: relative;
+                overflow:hidden;
+                 
+            }
+
+            #game-container
+            {
+                position: absolute;
+                width: 527px;
+                height: 348px;
+                
+                border-radius: 20px; 
+            }
+
+            #game-help
+            {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index:10;
+                
+                border-radius: 20px; 
+            }
+
+            #game-difficulty
+            {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index:9;
+                
+                border-radius: 20px; 
+            }
+
+            #game
+            {
+                position: absolute;
+
+                left:90px;
+                top:1px;
+
+                width: 342px;
+                height: 346px;
+
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+        </style>
+
+        <script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="script/jquery-migrate-1.1.1.js"></script>
+        <script type="text/javascript" src="script/jquery.ba-resize.min.js"></script>	
+
+        <script type="text/javascript" src="script/joaninha.js"></script>
+
+        <script type="text/javascript">
+
+            var game;
+
+            var level = null;
+            var levelId = 0;
+
+            //$(window).resize(onBodyResize);
+
+            function onBodyResize()
+            {
+                setDisplaySize(clientWidth(), clientHeight(), 'clip');
+
+                function clientWidth()
+                {
+                    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth || 0;
+                }
+
+                function clientHeight()
+                {
+                    return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight || 0;
+                }
+            }
+
+            $(function ()
+            {
+                initTouchHandler();
+
+                $('#game').empty();
+
+                game = new RushHourGame();
+                $('#game').append(game.content);
+                $('#game-ui').append(game.ui);
+
+                //onBodyResize();
+                setZoom(1);
+
+                showHelpScreen();
+            });
+
+            function showHelpScreen()
+            {
+                var gameHelp = $('#game-help');
+                BackgroundUtil.SetBackgroundImage(gameHelp, 'help_background');
+
+                var btPlay = $('<div></div>');
+                btPlay.css('position', 'absolute');
+                btPlay.attr('id', 'btPlay');
+                btPlay.css('cursor', 'hand');
+                btPlay.left(50);
+                btPlay.top(250);
+                btPlay.width(138);
+                btPlay.height(41);
+                gameHelp.append(btPlay);
+                BackgroundUtil.SetBackgroundImage(btPlay, 'play');
+
+                var btPlayClicked = false;
+                btPlay.on('mouseup', function ()
+                {
+                    if (btPlayClicked)
+                        return;
+                    btPlayClicked = true;
+
+                    showDifficultyScreen();
+                    gameHelp.animate({opacity: 0}, 500, function () {
+                        gameHelp.remove();
+                    });
+                });
+            }
+
+            function showDifficultyScreen()
+            {
+                var gameDifficulty = $('#game-difficulty');
+                BackgroundUtil.SetBackgroundImage(gameDifficulty, 'clear_background');
+
+                var btEasy = $('<div></div>');
+                btEasy.css('position', 'absolute');
+                btEasy.attr('id', 'btEasy');
+                btEasy.css('cursor', 'hand');
+                btEasy.left(50);
+                btEasy.top(40);
+                btEasy.width(140);
+                btEasy.height(43);
+                gameDifficulty.append(btEasy);
+                BackgroundUtil.SetBackgroundImage(btEasy, 'easy');
+
+                var btDifficultyClicked = false;
+                btEasy.on('mouseup', function ()
+                {
+                    if (btDifficultyClicked)
+                        return;
+                    btDifficultyClicked = true;
+
+                    playLevelId(0);
+                    gameDifficulty.animate({opacity: 0}, 500, function () {
+                        gameDifficulty.remove();
+                    });
+                });
+
+                var btMedium = $('<div></div>');
+                btMedium.css('position', 'absolute');
+                btMedium.attr('id', 'btEasy');
+                btMedium.css('cursor', 'hand');
+                btMedium.left(200);
+                btMedium.top(40);
+                btMedium.width(140);
+                btMedium.height(43);
+                gameDifficulty.append(btMedium);
+                BackgroundUtil.SetBackgroundImage(btMedium, 'medium');
+
+                var btDifficultyClicked = false;
+                btMedium.on('mouseup', function ()
+                {
+                    if (btDifficultyClicked)
+                        return;
+                    btDifficultyClicked = true;
+
+                    playLevelId(1);
+                    gameDifficulty.animate({opacity: 0}, 500, function () {
+                        gameDifficulty.remove();
+                    });
+                });
+
+                var btHard = $('<div></div>');
+                btHard.css('position', 'absolute');
+                btHard.attr('id', 'btEasy');
+                btHard.css('cursor', 'hand');
+                btHard.left(350);
+                btHard.top(40);
+                btHard.width(140);
+                btHard.height(43);
+                gameDifficulty.append(btHard);
+                BackgroundUtil.SetBackgroundImage(btHard, 'hard');
+
+                var btDifficultyClicked = false;
+                btHard.on('mouseup', function ()
+                {
+                    if (btDifficultyClicked)
+                        return;
+                    btDifficultyClicked = true;
+
+                    playLevelId(2);
+                    gameDifficulty.animate({opacity: 0}, 500, function () {
+                        gameDifficulty.remove();
+                    });
+                });
+            }
+
+            function playLevelId(difficulty)
+            {
+                if (difficulty == 0)
+                    levelId = Math.floor(0 + Math.random() * 4);
+                else if (difficulty == 1)
+                    levelId = Math.floor(4 + Math.random() * 6);
+                else if (difficulty >= 2)
+                    levelId = Math.floor(10 + Math.random() * 4);
+
+                level = JSON.parse(JSON.stringify(levels[levelId]));
+                level.difficulty = difficulty;
+                game.initializeLevel(level);
+            }
+
+            function touchHandler(event)
+            {
+                var touch = event.changedTouches[0];
+
+                var simulatedEvent = document.createEvent("MouseEvent");
+                simulatedEvent.initMouseEvent({
+                    touchstart: "mousedown",
+                    touchmove: "mousemove",
+                    touchend: "mouseup"
+                }[event.type], true, true, window, 1,
+                        touch.screenX, touch.screenY,
+                        touch.clientX, touch.clientY, false,
+                        false, false, false, 0, null);
+
+                touch.target.dispatchEvent(simulatedEvent);
+                event.preventDefault();
+            }
+
+            function initTouchHandler()
+            {
+                document.getElementById('game-display').addEventListener("touchstart", touchHandler, true);
+                document.getElementById('game-display').addEventListener("touchmove", touchHandler, true);
+                document.getElementById('game-display').addEventListener("touchend", touchHandler, true);
+                document.getElementById('game-display').addEventListener("touchcancel", touchHandler, true);
+            }
+
+            function setZoom(zoom)
+            {
+                var width = $('#game-container').width();
+                var height = $('#game-container').height();
+
+                var newWidth = width * zoom;
+                var newHeight = height * zoom;
+
+                var tx = (newWidth - width) / 2;
+                var ty = (newHeight - height) / 2;
+
+                $('#game-container').css('left', tx + 'px');
+                $('#game-container').css('top', ty + 'px');
+
+                $('#game-container').css('transform', 'scale(' + zoom + ',' + zoom + ')');
+                $('#game-container').css('-ms-transform', 'scale(' + zoom + ',' + zoom + ')');
+                $('#game-container').css('-webkit-transform', 'scale(' + zoom + ',' + zoom + ')');
+
+                $('#game-display').width(newWidth);
+                $('#game-display').height(newHeight);
+
+                $('#game-display').data('scaleX', zoom);
+                $('#game-display').data('scaleY', zoom);
+            }
+
+            function setDisplaySize(newWidth, newHeight, fitMode)
+            {
+                var width = $('#game-container').width();
+                var height = $('#game-container').height();
+
+                var scaleX = newWidth / width;
+                var scaleY = newHeight / height;
+
+                if (fitMode && (fitMode == 'all' || fitMode == 'clip'))
+                {
+                    var scale = Math[(fitMode == 'all') ? 'min' : 'max'].call(null, scaleX, scaleY);
+                    scaleX = scale;
+                    scaleY = scale;
+                }
+
+                var tx = (newWidth - width) / 2;
+                var ty = (newHeight - height) / 2;
+
+                $('#game-container').css('left', tx + 'px');
+                $('#game-container').css('top', ty + 'px');
+
+                $('#game-container').css('transform', 'scale(' + scaleX + ',' + scaleY + ')');
+                $('#game-container').css('-ms-transform', 'scale(' + scaleX + ',' + scaleY + ')');
+                $('#game-container').css('-webkit-transform', 'scale(' + scaleX + ',' + scaleY + ')');
+
+                $('#game-display').width(newWidth);
+                $('#game-display').height(newHeight);
+
+                $('#game-display').data('scaleX', scaleX);
+                $('#game-display').data('scaleY', scaleY);
+            }
+
+        </script>
+
+    </head>
+    <body>
+        <div id="game-display">
+            <div id="game-container">
+                <div id="game">
+                </div>
+                <div id="game-help">
+                </div>
+                <div id="game-difficulty">
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="JoaninhaAssets"></script>
+        <script type="text/javascript" src="JoaninhaLevels"></script>
+    </body>
+</html>

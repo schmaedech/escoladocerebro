@@ -1,0 +1,62 @@
+<nav class="nav nav-6"> 
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 right-bar" >  
+            <img src="img/button_back.png" alt="" class="btn-img pointer card-3" ng-click="goPath('viewT')"/> 
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title"> 
+            
+            <span class="title-label">  
+                {{title}}
+            </span>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 left-bar">   
+            <img class="left-bar-img btn-img" src="img/icone_times.png" alt=""/>
+            <div class="stat_runningTime_display">  TEMPO </div>
+            <div id="baloon-header" class="baloon-header  {{hidden}} " ng-click="closeAlert()"> 
+                <div class="baloon-reverse" >  
+                    <button class="btn fa fa-close baloon-btn" ng-click="closeAlert()"></button>  
+                    <span class="baloon-label">  
+                        {{message}} 
+                    </span>  
+                </div>  
+            </div>
+
+        </div>
+    </div> 
+</nav> 
+<section class="view view-6">    
+
+</section> 
+<div id="baloon-header-logger" class="baloon-header  card card-5 hidden" > 
+    <div class="baloon-baloon" >   
+        <span class="baloon-label">  </span> 
+        <button id="game_again" class="btn fa fa-forward baloon-off" >JOGAR NOVAMENTE</button>  
+    </div>  
+</div>
+<div class="modal fade" id="modal" tabindex="-1" role="dialog"   aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+
+            </div>
+            <div class="modal-body">
+                <iframe iframe-onload="iframeLoadedCallBack()" id="{{gameId}}" src="{{gameUrl}}"></iframe> 
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="form-group">
+
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 h100"> 
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                        </div> 
+
+                    </div>
+
+                </div> 
+
+
+            </div>
+        </div> 
+    </div> 
+</div>     

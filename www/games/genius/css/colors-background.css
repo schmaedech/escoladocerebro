@@ -1,0 +1,284 @@
+.color{
+     -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg);  
+/*     -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg); */
+    background-repeat:no-repeat; background-position:center center;
+}
+/*.colorRotate4{
+    -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg);  
+}
+.colorRotate6{
+     -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg);  
+ -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg); 
+}
+.colorRotate8{
+      -ms-transform: rotate(-45deg);   
+    -webkit-transform: rotate(-45deg);  
+    transform: rotate(-45deg);   
+}*/
+.color.truered{ }   
+.color.truegreen{ }
+.color.trueblue{ }
+.color.trueyellow{ }
+.color.truecyan{}
+.color.truemagenta{}
+.color.trueblack{}
+.color.truesilver{ }
+.color.truegold{ }
+.color.truebrown{ }
+ 
+
+.color.trueorange{background:#FFA500;} 
+.color.truemaroon{background:#800000;}
+.color.trueolive{background:#808000;}
+.color.truefuchsia{background:#F012BE;}  
+.color.truemodern{background:#f86666;} 
+.color.trueolive{background:#808000;}
+.color.truefuchsia{background:#F012BE;}  
+.color.truemodern{background:#f86666;} 
+.color.trueorange{background:#FFA500;}
+.color.truecyan{background:#00FFFF; } 
+.color.truedarkblue{background:#0000A0;}
+.color.truelightblue{background:#ADD8E6;}
+.color.truepurple{background:#800080;}
+.color.truelime{background:#00FF00;}
+//web
+.color.aqua{background:#7FDBFF;}
+.color.blue{background:#0074D9;}
+.color.navy{background:#001F3F;}
+.color.teal{background:#39CCCC;}
+.color.green{background:#2ECC40;}
+.color.olive{background:#3D9970;}
+.color.lime{background:#01FF70;}
+.color.maroon{background:#85144B;}
+.color.orange{background:#FF851B;}
+.color.purple{background:#B10DC9;}
+.color.red{background:#FF4136;}
+.color.yellow{background:#FFDC00;}
+.color.fuchsia{background:#F012BE;}
+.color.silver{background:#ddd;}
+.color.grey{background:#aaa;}
+.color.white{background:#fff;}
+.color.black{background:#111;}
+.color.modern{background:#f86666;}
+.color.gold{background:#ffbc00;}
+.color.darkblue{background:#0000A0;}
+//webdefaults
+.color.defaultaqua{background:aqua;}
+.color.defaultblack{background:black;}
+.color.defaultblue{background:blue;}
+.color.defaultfuchsia{background:fuchsia;}
+.color.defaultgray{background:gray;}
+.color.defaultgreen{background:green;}
+.color.defaultlime{background:lime;}
+.color.defaultmaroon{background:maroon;}
+.color.defaultnavy{background:navy;}
+.color.defaultolive{background:olive;}
+.color.defaultorange{background:orange;}
+.color.defaultpurple{background:purple;}
+.color.defaultred{background:red;}
+.color.defaultsilver{background:silver;}
+.color.defaultteal{background:teal;}
+.color.defaultwhite{background:white;}
+.color.defaultyellow{background:yellow;}
+.color.defaultmodern{background:#f86666;}
+.color.defaultgold{background:#ffbc00;}
+.color.defaultdarkblue{background:#0000A0;} 
+
+//big
+.color.aliceblue {background:#F0F8FF;}
+.color.antiquewhite {background:#FAEBD7;}
+.color.aqua {background:#00FFFF;}
+.color.aquamarine {background:#7FFFD4;}
+.color.azure {background:#F0FFFF;}
+.color.beige {background:#F5F5DC;}
+.color.bisque {background:#FFE4C4;}
+.color.black {background:#000000;}
+.color.blanchedalmond {background:#FFEBCD;}
+.color.blue {background:#0000FF;}
+.color.blueviolet {background:#8A2BE2;}
+.color.brown {background:#A52A2A;}
+.color.burlywood {background:#DEB887;}
+.color.cadetblue {background:#5F9EA0;}
+.color.chartreuse {background:#7FFF00;}
+.color.chocolate {background:#D2691E;}
+.color.coral {background:#FF7F50;}
+.color.cornflowerblue {background:#6495ED;}
+.color.cornsilk {background:#FFF8DC;}
+.color.crimson {background:#DC143C;}
+.color.cyan {background:#00FFFF;}
+.color.darkblue {background:#00008B;}
+.color.darkcyan {background:#008B8B;}
+.color.darkgoldenrod {background:#B8860B;}
+.color.darkgray {background:#A9A9A9;}
+.color.darkgreen {background:#006400;}
+.color.darkkhaki {background:#BDB76B;}
+.color.darkmagenta {background:#8B008B;}
+.color.darkolivegreen {background:#556B2F;}
+.color.darkorange {background:#FF8C00;}
+.color.darkorchid {background:#9932CC;}
+.color.darkred {background:#8B0000;}
+.color.darksalmon {background:#E9967A;}
+.color.darkseagreen {background:#8FBC8F;}
+.color.darkslateblue {background:#483D8B;}
+.color.darkslategray {background:#2F4F4F;}
+.color.darkturquoise {background:#00CED1;}
+.color.darkviolet {background:#9400D3;}
+.color.deeppink {background:#FF1493;}
+.color.deepskyblue {background:#00BFFF;}
+.color.dimgray {background:#696969;}
+.color.dodgerblue {background:#1E90FF;}
+.color.firebrick {background:#B22222;}
+.color.floralwhite {background:#FFFAF0;}
+.color.forestgreen {background:#228B22;}
+.color.fuchsia {background:#FF00FF;}
+.color.gainsboro {background:#DCDCDC;}
+.color.ghostwhite {background:#F8F8FF;}
+.color.gold {background:#FFD700;}
+.color.goldenrod {background:#DAA520;}
+.color.gray {background:#808080;}
+.color.green {background:#008000;}
+.color.greenyellow {background:#ADFF2F;}
+.color.honeydew {background:#F0FFF0;}
+.color.hotpink {background:#FF69B4;}
+.color.indianred  {background:#CD5C5C;}
+.color.indigo  {background:#4B0082;}
+.color.ivory {background:#FFFFF0;}
+.color.khaki {background:#F0E68C;}
+.color.lavender {background:#E6E6FA;}
+.color.lavenderblush {background:#FFF0F5;}
+.color.lawngreen {background:#7CFC00;}
+.color.lemonchiffon {background:#FFFACD;}
+.color.lightblue {background:#ADD8E6;}
+.color.lightcoral {background:#F08080;}
+.color.lightcyan {background:#E0FFFF;}
+.color.lightgoldenrodyellow {background:#FAFAD2;}
+.color.lightgray {background:#D3D3D3;}
+.color.lightgreen {background:#90EE90;}
+.color.lightpink {background:#FFB6C1;}
+.color.lightsalmon {background:#FFA07A;}
+.color.lightseagreen {background:#20B2AA;}
+.color.lightskyblue {background:#87CEFA;}
+.color.lightslategray {background:#778899;}
+.color.lightsteelblue {background:#B0C4DE;}
+.color.lightyellow {background:#FFFFE0;}
+.color.lime {background:#00FF00;}
+.color.limegreen {background:#32CD32;}
+.color.linen {background:#FAF0E6;}
+.color.magenta {background:#FF00FF;}
+.color.maroon {background:#800000;}
+.color.mediumaquamarine {background:#66CDAA;}
+.color.mediumblue {background:#0000CD;}
+.color.mediumorchid {background:#BA55D3;}
+.color.mediumpurple {background:#9370DB;}
+.color.mediumseagreen {background:#3CB371;}
+.color.mediumslateblue {background:#7B68EE;}
+.color.mediumspringgreen {background:#00FA9A;}
+.color.mediumturquoise {background:#48D1CC;}
+.color.mediumvioletred {background:#C71585;}
+.color.midnightblue {background:#191970;}
+.color.mintcream {background:#F5FFFA;}
+.color.mistyrose {background:#FFE4E1;}
+.color.moccasin {background:#FFE4B5;}
+.color.navajowhite {background:#FFDEAD;}
+.color.navy {background:#000080;}
+.color.oldlace {background:#FDF5E6;}
+.color.olive {background:#808000;}
+.color.olivedrab {background:#6B8E23;}
+.color.orange {background:#FFA500;}
+.color.orangered {background:#FF4500;}
+.color.orchid {background:#DA70D6;}
+.color.palegoldenrod {background:#EEE8AA;}
+.color.palegreen {background:#98FB98;}
+.color.paleturquoise {background:#AFEEEE;}
+.color.palevioletred {background:#DB7093;}
+.color.papayawhip {background:#FFEFD5;}
+.color.peachpuff {background:#FFDAB9;}
+.color.peru {background:#CD853F;}
+.color.pink {background:#FFC0CB;}
+.color.plum {background:#DDA0DD;}
+.color.powderblue {background:#B0E0E6;}
+.color.purple {background:#800080;}
+.color.red {background:#FF0000;}
+.color.rosybrown {background:#BC8F8F;}
+.color.royalblue {background:#4169E1;}
+.color.saddlebrown {background:#8B4513;}
+.color.salmon {background:#FA8072;}
+.color.sandybrown {background:#F4A460;}
+.color.seagreen {background:#2E8B57;}
+.color.seashell {background:#FFF5EE;}
+.color.sienna {background:#A0522D;}
+.color.silver {background:#C0C0C0;}
+.color.skyblue {background:#87CEEB;}
+.color.slateblue {background:#6A5ACD;}
+.color.slategray {background:#708090;}
+.color.snow {background:#FFFAFA;}
+.color.springgreen {background:#00FF7F;}
+.color.steelblue {background:#4682B4;}
+.color.tan {background:#D2B48C;}
+.color.teal {background:#008080;}
+.color.thistle {background:#D8BFD8;}
+.color.tomato {background:#FF6347;}
+.color.turquoise {background:#40E0D0;}
+
+//flat
+.color.turquoise {background: #1ABC9C;}
+.color.greensea {background: #16A085;}
+.color.emerland {background: #2ECC71;}
+.color.nephritis {background: #27AE60;}
+.color.peterriver {background: #3498DB;}
+.color.belizehole {background: #2980B9;}
+.color.amethyst {background: #9B59B6;}
+.color.wisteria {background: #8E44AD;}
+.color.wetasphalt {background: #34495E;}
+.color.midnightblue {background: #2C3E50;}
+.color.sunflower {background: #F1C40F;}
+.color.orange {background: #F39C12;}
+.color.carrot {background: #E67E22;}
+.color.pumpkin {background: #D35400;}
+.color.alizarin {background: #E74C3C;}
+.color.pomegranate {background: #C0392B;}
+.color.clouds {background: #C63D0F; }
+.color.silver {background: #BDC3C7;}
+.color.concrete {background: #95A5A6;}
+.color.asbestos {background: #7F8C8D;}
+.color.turquoise {background: #1ABC9C;}
+.color.greensea {background: #16A085;}
+.color.emerland {background: #2ECC71;}
+.color.nephritis {background: #27AE60;}
+.color.peterriver {background: #3498DB;}
+.color.belizehole {background: #2980B9;}
+.color.amethyst {background: #9B59B6;}
+.color.wisteria {background: #8E44AD;}
+.color.wetasphalt {background: #34495E;}
+.color.midnightblue {background: #2C3E50;}
+.color.sunflower {background: #F1C40F;}
+.color.orange {background: #F39C12;}
+.color.carrot {background: #E67E22;}
+.color.pumpkin {background: #D35400;}
+.color.alizarin {background: #E74C3C;}
+.color.pomegranate {background: #C0392B;}
+.color.clouds {background: #C63D0F; }
+.color.silver {background: #BDC3C7;}
+.color.concrete {background: #95A5A6;}
+.color.asbestos {background: #7F8C8D;}
+
+
+// ┌────────────────────────────────────────────────────────────────────┐ \\
+// │ Escola do Cérebro 1.0.0 - Educational Game Library                 │ \\
+// ├────────────────────────────────────────────────────────────────────┤ \\
+// │ Copyright © 2013-2014 Cognisense Tecnologia Ltda                   │ \\
+// │ Copyright © 2014 EduSCADA Labs (http://eduscada.com)               │ \\
+// ├────────────────────────────────────────────────────────────────────┤ \\
+// │ Licensed under the MIT (http://cognisense.com.br/license.html)     │ \\
+// └────────────────────────────────────────────────────────────────────┘ \\
+

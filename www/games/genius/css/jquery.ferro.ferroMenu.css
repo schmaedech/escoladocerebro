@@ -1,0 +1,88 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  
+} 
+
+.ferromenu-controller{
+	position:absolute;
+	display:block;
+	width:90px;
+	height:90px;
+	/*margin:10px;*/
+	text-align:center;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	background: #45484d;
+    color:#f2f2f2;
+    font-family: 'Patrick Hand SC', sans-serif;
+    font-size:24px;
+    line-height:90px;
+    vertical-align:middle;
+    text-decoration:none; 
+    
+   visibility: hidden;
+}
+
+.ferromenu-controller .label{
+	-webkit-transition : all 0.2s linear;
+	-moz-transition : all 0.2s linear;
+	-ms-transition : all 0.2s linear;
+	-o-transition : all 0.2s linear;
+	transition : all 0.2s linear;
+}
+
+.ferromenu-controller.open .label{
+	-webkit-transform : rotate(45deg);
+	-moz-transform : rotate(45deg);
+	-ms-transform : rotate(45deg);
+	-o-transform : rotate(45deg);
+	transform : rotate(45deg);
+}
+
+.ferromenu-controller.desktop:hover,
+.ferromenu-controller.mobile:active{
+	background:#6e737b;
+}
+
+#nav li,#nav2 li{
+	/* color:#f2f2f2; */
+	text-align:center;
+	
+}
+
+#nav li a,#nav2 li a{
+	font-size:14px;
+	color:#f2f2f2;
+	text-decoration:none;
+	width: 64px;
+	height: 64px;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	 
+	line-height: 64px;
+	display:block;
+        
+}
+
+#nav li.desktop a:hover,#nav2 li.desktop a:hover,
+#nav li.mobile a:active,#nav2 li.mobile a:active{
+	opacity: 0.5;
+}
+
+
+#ferromenu-controller,#nav li a{
+	/* background:white; */
+	/* color:#D06503; */
+	-webkit-transition: color 0.6s;
+	-moz-transition: color 0.6s;
+	-ms-transition: color 0.6s;
+	-o-transition: color 0.6s;
+	transition: color 0.6s;
+}
+
+#ferromenu-controller.desktop:hover,
+#ferromenu-controller.mobile:active,
+#nav li a:hover,
+#nav li a:active{
+	/* background:white; */
+	opacity:0.8;
+}

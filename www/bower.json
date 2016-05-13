@@ -1,0 +1,26 @@
+{
+    "name": "EscolaDoCerebro",
+    "description": "Escola do Cérebro",
+    "version": "17.0.0",
+    "homepage": "https://escoladocerebro.org",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "jquery": "latest",
+        "bootstrap": "latest",
+        "bootstrap-datepicker": "latest",
+        "amcharts": "latest",
+        "amcharts-stock": "latest", 
+        "d3": "latest",
+        "nvd3": "latest", 
+        "sparkline": "latest",
+        "bootstrap": "latest",
+        "moment": "latest",
+        "angular-route": "latest",
+        "angular-loader": "latest",
+        "angular-mocks": "latest",
+        "pace": "latest",
+        "font-awesome": "latest"
+
+    }
+} 

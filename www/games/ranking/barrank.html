@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Bem Vindos ao Ranking Escola do Cérebro</title> 
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>    
+        <meta name="author" content="Cognisense Tecnologia Ltda">  
+        <meta name="keywords" content="" /> 
+        <meta name="description" content="" />    
+        <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/app.css" rel="stylesheet" type="text/css"/>
+
+        <link href="charts.css" rel="stylesheet" type="text/css"/>  
+        <script src="../../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/amcharts/dist/amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../../bower_components/amcharts/dist/amcharts/serial.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <ul>
+            <li>  <select id="game">
+                    <option value="connectome">connectome</option>  
+                    <option value="joaninha">joaninha</option>  
+                    <option value="breakout">breakout</option>  
+                    <option value="looktable">looktable</option>  
+                    <option value="tangran">tangran</option>  
+                    <option value="genius">genius</option> 
+                    <option value="tetris">tetris</option> 
+                </select></li>
+            <li><select id="circle">
+                    <option value="0">Geral</option>  
+                    <option value="1">Meu grupo</option>
+
+                </select></li>
+            <li><select id="level">
+                    <option value="0">Básico</option>
+                    <option value="1">Intermediário</option>
+                    <option value="2">Avançado</option> 
+                </select></li>
+
+        </ul>
+
+
+
+        <div id="chartdiv"></div>
+
+        <script>
+
+            function renderPieChart(data) {
+                var chart;
+                if (chart) {
+                    chart.clear();
+                }
+
+                if (document.body) {
+                    //  document.body.style.backgroundColor = bgColor;
+                    //  document.body.style.backgroundImage = "url(" + bgImage + ")";
+                }
+                chart = AmCharts.makeChart("chartdiv", {
+                    "type": "serial",
+                    "theme": "none",
+                    "legend": {
+                        "horizontalGap": 10,
+                        "maxColumns": 1,
+                        "position": "right",
+                        "color": "#fff",
+                        "useGraphSettings": true,
+                        "markerSize": 10
+                    },
+                    "dataProvider": data,
+                    "valueAxes": [{
+                            "stackType": "regular",
+                            "axisAlpha": 0.5,
+                            "gridAlpha": 0
+                        }],
+                    "graphs": [{
+                            "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                            "fillAlphas": 0.8,
+                            "labelText": "[[value]]",
+                            "lineAlpha": 0.3,
+                            "title": "Acurácia",
+                            "type": "column",
+                            "color": "#000000",
+                            "valueField": "acuracia"
+                        }, {
+                            "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                            "fillAlphas": 0.8,
+                            "labelText": "[[value]]",
+                            "lineAlpha": 0.3,
+                            "title": "Velocidade",
+                            "type": "column",
+                            "color": "#000000",
+                            "valueField": "velocidade"
+                        }, {
+                            "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                            "fillAlphas": 0.8,
+                            "labelText": "[[value]]",
+                            "lineAlpha": 0.3,
+                            "title": "Estabilidade",
+                            "type": "column",
+                            "color": "#000000",
+                            "valueField": "estabilidade"
+                        }],
+                    "rotate": true,
+                    "categoryField": "jogador",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "axisAlpha": 0,
+                        "gridAlpha": 0,
+                        "color": "#fff",
+                        "position": "left"
+                    },
+                    "export": {
+                        "enabled": true
+                    }
+                });
+
+            }
+
+            function ajaxPieChart(idgame, level, circle) {
+
+                $.getJSON("https://escoladocerebro.org/eduscada/c/index.php/ec_query_players", {action: "list_points_ranking", idgame: idgame, level: level, circle: circle})
+                        .done(function (json) {
+                            if (json !== null) {
+                                var data = JSON.parse(json);
+                                if (data !== null) {
+                                    renderPieChart(data);
+                                    $('a').hide(); //discomment after buy 
+                                } else {
+
+                                }
+                            }
+                        })
+                        .fail(function (jqxhr, textStatus, error) {
+                            console.log("Você parece estar off-line!");
+                        });
+
+            }
+
+            $(document).ready(function ($) {
+                var user = "";
+                ajaxPieChart($("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+
+                $("#game").change(function ()
+                {
+                    console.log($("#game option:selected").val());
+                    ajaxPieChart($("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+
+                });
+                $("#level").change(function ()
+                {
+                    console.log($("#level option:selected").val());
+                    ajaxPieChart($("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+
+                });
+                $("#circle").change(function ()
+                {
+
+                    if ($("#circle option:selected").val() > 0) {
+                        user = JSON.parse(window.localStorage['org.escoladocerebro.user'] || '{}');
+                        ajaxPieChart($("#game option:selected").val(), $("#level option:selected").val(), user.group);
+                    } else {
+                        ajaxPieChart($("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+
+                    }
+
+
+
+                });
+
+
+            });
+        </script>
+    </body>
+</html>

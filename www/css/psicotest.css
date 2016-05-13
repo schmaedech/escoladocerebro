@@ -1,0 +1,307 @@
+ body, html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+html,body {
+    background: transparent;
+    font-size: 1em;
+    font-family: "OCR A Std" , "OCRastd";
+    -webkit-transition: All .6s ease-in-out;
+    -moz-transition: All .6s ease-in-out;
+    -ms-transition: All .6s ease-in-out;
+    -o-transition: All .6s ease-in-out;
+    transition: All .6s ease-in-out;
+    /* min-height: 600px; */
+}
+.peaces-logo{
+    margin:0 auto;
+    text-align:center;
+    width: 25%;
+    background-color: #FFFFFF;
+    border-bottom: 5px #89DEAA solid;
+}
+.btn-primary.disabled, .btn-primary.disabled.active, .btn-primary.disabled.focus, .btn-primary.disabled:active, .btn-primary.disabled:focus, .btn-primary.disabled:hover, .btn-primary[disabled], .btn-primary[disabled].active, .btn-primary[disabled].focus, .btn-primary[disabled]:active, .btn-primary[disabled]:focus, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary.active, fieldset[disabled] .btn-primary.focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:hover {
+    background-color: transparent;
+    border-color: #2e6da4;
+}
+.btn-margin{
+    margin: 10px;
+}
+.stage{
+   /* position: absolute; */
+   /* top: 0%; */
+   /* left: 16%; */
+   /* right:5%; */
+}
+
+.layout .row  {
+    text-align:center;
+    margin:0 auto;
+    width: 100%;
+    padding: 5% 0% 5% 0%;
+    margin: 0 auto;
+}
+.board .btn:hover{
+    background:transparent;
+
+}
+
+ .close{
+    /* float: right; */
+    /* margin-top: 0%; */
+    /* margin-right: 0%; */
+    z-index: 100000000000000;
+    /* position: absolute; */
+    /* right: 0; */
+    cursor: pointer;
+}
+.board-background{
+    background-image: url(../img/test_title.png); 
+
+    background-repeat: no-repeat; 
+
+
+    background-position: center; 
+
+
+    background-size: 100% 100%;
+}
+.peaces-background{
+    background-image: url(../img/test_title.png); 
+
+    background-repeat: no-repeat; 
+
+
+    background-position: center; 
+
+
+    background-size: 100% 100%;
+    /* padding: 1%; */
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+}
+nav.navbar.navbar-default {
+    border-color: transparent;
+    z-index: -100000000;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+}
+.btn img{
+
+    max-width: 64px;  
+
+
+    max-height: 64px;  
+    
+
+    width: 100%;
+    
+
+    height: 100%;
+margin: 2%;}
+.badge{
+    color: #00CCFF;  
+    background: transparent;  
+    border: 0px #8676b5 solid;  
+    font-size: 1em;
+}
+.btn{
+    color: #00CCFF;
+    background: #413466;
+    border: 1px #8676b5 solid;
+    font-size: 1em;
+    /* padding: 26px; */
+}
+.time img{
+   width: 32px;
+    max-height: 32px;
+  max-width: 32px;
+}
+ 
+.btn:hover{
+    color: #9F89D6;  
+}
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #9F89D6;
+    border-color: #413466;
+}
+  .jumbotron {
+    padding: 0px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    background-color: rgba(102, 52, 78, 0.8);
+    border: 2px solid #c57ba2;
+    border-radius: 8px;
+}
+  
+ 
+.teste_model{
+  
+}
+.peaces-unique img{
+    max-width: 25%;
+    max-height: 25%;
+}
+
+.peaces-pier img{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.list-group-item{
+    background-color: #413466;
+    border: 1px dashed #00CCFF;
+    padding:2%;
+}
+.board .btn {
+    margin: 0%;
+    font-size:0;
+    width: 100%;
+    height: 100%;
+    /* min-width: 32px; */
+    /* min-height: 32px; */
+    padding: 2%;
+    /* margin-left: 2px; */
+    border:0px;
+    /* background:transparent; */
+}
+.board-memory .row{
+  padding: 5% 0% 5% 0%;
+  /* margin-left: 25%; */
+}
+.board-attention .row{
+  padding: 2px 0% 2px 0%;
+  /* margin-left: 7%; */
+}
+.board-attention .btn{
+  width: 48px;
+  height: 48px;
+  /* margin-left: 50%; */
+  /* margin-right: 50%; */
+}
+.col-sm-1 {
+    margin-left: 1%;
+}
+.board-problems .row{
+  padding: 5% 0% 5% 0%;
+}
+.peaces-logo .btn {
+   padding: 0;
+   font-size:0;
+   width: 100%;
+   height: 100%;
+   border:0px;
+   background:transparent;
+   /* display: inline-block; */
+} 
+.hello img{
+    /* position:absolute; */
+    /* left:1%; */
+    /* top:1%; */
+
+    width: 15%;
+    /* background: #f2f2f2; */
+}
+.footer-test{
+    /* position:absolute; */
+    /* bottom:0; */
+    /* left:0; */
+}
+.board  {
+
+    padding-top: 0%;
+border: 2px #c57ba2 solid;}
+.peaces-logo img{
+
+    /* width: 100%; */
+    
+
+    /* height: 100%; */ 
+    /* max-height: 64px; */
+}
+.shape {
+    float: left;
+    display: inline;
+    width: 100%;
+    height: 100%;
+    margin: 1px;
+    padding: 50px;
+    background: #1c1c1c;
+    zoom: .2;
+}
+
+.shape:hover,
+.shape:focus {
+    background: #161616;
+}
+ 
+.baloon {
+    font-size: 1em;
+    /* height: 35%; */
+    width: 100%;
+    /* margin-top: 50%; */
+    /* background-image: url(../img/baloon.png); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-position: center top; */
+    /* position: absolute; */
+    /* top: 10%; */
+    /* left: 35%; */
+    /* width: 30%; */
+    cursor: pointer;
+    z-index: 10000000000000;
+}
+
+.baloon-baloon {
+    padding: 7%;
+    margin-top: 3%;
+}
+.baloon-reverse { 
+    background-image: url(../img/baloon-reverse.png);  
+    background-repeat: no-repeat;  
+    background-size: 100% 100%;  
+    padding: 19%; 
+}
+.baloon-label {
+    text-align: left;
+    color: #f5f5f5;
+}
+.robot{
+    margin-left:80%;
+    /* margin-top:25%; */
+    
+    width: 10%;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100%;
+  /* padding-top: 0%; */
+  border-radius: 20px;
+  /* position: absolute; */
+}   
+
+.center{
+    margin: 0 auto;
+    text-align: center;
+}
+.container {
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-right: auto;
+    margin-left: auto;
+    /* padding: 1px; */
+}
+@media (min-width: 768px){
+.navbar-nav>li>a {
+    /* padding-top: 3%; */
+    /* padding-bottom: 3%; */
+    /* z-index: -100; */
+}}

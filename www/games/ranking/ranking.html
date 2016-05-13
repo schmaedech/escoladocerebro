@@ -1,0 +1,143 @@
+<div id="chartdiv"></div>
+<script>
+    $(document).ready(function ($) {
+
+        function renderPointsChart(data) {
+            var chart;
+            if (chart) {
+                chart.clear();
+            }
+            $('#chartdiv').css("height", $(window).height() / 2);
+            if (document.body) {
+                //  document.body.style.backgroundColor = bgColor;
+                //  document.body.style.backgroundImage = "url(" + bgImage + ")";
+            }
+            chart = AmCharts.makeChart("chartdiv", {
+                "type": "serial",
+                "theme": "light",
+                "addClassNames": true,
+                "startDuration": 1,
+                "color": "#FFFFFF",
+                "marginLeft": 0,
+                "legend": {
+                    "equalWidths": false,
+                    "useGraphSettings": true,
+                    "valueAlign": "left",
+                    "color": "#FFFFFF",
+                    "valueWidth": 120
+                },
+                "dataProvider": data,
+                "valueAxes": [
+                    {
+                        "id": "timeAxis",
+                        "axisAlpha": 0,
+                        "gridAlpha": 0,
+                        "position": "left"
+                    },
+                    {
+                        "id": "pontuacaoAxis",
+                        "axisAlpha": 0,
+                        "gridAlpha": 0,
+                        "inside": true,
+                        "position": "right"
+
+                    }],
+                "graphs": [
+                    {
+                        "alphaField": "alpha",
+                        "balloonText": "Tempo:[[value]] ",
+                        "legendPeriodValueText": "total: [[value.sum]] segundos",
+                        "legendValueText": "[[value]] segundos",
+                        "dashLengthField": "dashLength",
+                        "fillAlphas": 0.7,
+                        "title": "tempo",
+                        "type": "column",
+                        "valueField": "time",
+                        "valueAxis": "timeAxis"
+                    },
+                    {
+                        "balloonText": "Pontos:[[value]]",
+                        "bullet": "round",
+                        "bulletBorderAlpha": 1,
+                        "useLineColorForBulletBorder": true,
+                        "bulletColor": "#FFFFFF",
+                        "labelPosition": "right",
+                        "labelText": "[[Pontos]]",
+                        "title": "pontos",
+                        "fillAlphas": 0,
+                        "valueField": "pontuacao",
+                        "valueAxis": "pontuacaoAxis"
+                    }],
+                "chartCursor": {
+                    "cursorAlpha": 0.1,
+                    "cursorColor": "#444",
+                    "fullWidth": true,
+                    "valueBalloonsEnabled": false,
+                    "zoomable": true
+                },
+                "dataDateFormat": "YYYY-MM-DD",
+                "categoryField": "index",
+                "categoryAxis": {
+                    "autoGridCount": true,
+                    "axisColor": "#555555",
+                    "gridAlpha": 0.1,
+                    "gridColor": "#FFFFFF",
+                    "gridCount": 50
+                },
+                "export": {
+                    "enabled": true
+                }
+            });
+        }
+
+        function getPointsChart(idusers, idgame, level, circle) {
+
+            $.getJSON("https://escoladocerebro.org/eduscada/c/index.php/ec_query_players", {action: "list_all_my_points", idusers: idusers, idgame: idgame, level: level, circle: circle})
+                    .done(function (json) {
+                        if (json !== null) {
+                            var data = JSON.parse(json);
+                            if (data !== null) {
+                                renderPointsChart(data);
+                                $('a').hide(); //discomment after buy 
+                            } else {
+
+                            }
+                        }
+                    })
+                    .fail(function (jqxhr, textStatus, error) {
+                        console.log("Você parece estar off-line!");
+                    });
+
+        }
+
+        function update( ) {
+            var user = JSON.parse(window.localStorage['org.escoladocerebro.user'] || '{}');
+            getPointsChart(user.idusers, $("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+
+
+
+        }
+
+        function init( ) {
+
+            $("#game").change(function ()
+            {
+                update( );
+            });
+            $("#level").change(function ()
+            {
+                update( );
+            });
+            $("#circle").change(function ()
+            {
+                update( );
+            });
+
+
+            update( );
+
+        }
+
+        init( );
+    });
+</script>

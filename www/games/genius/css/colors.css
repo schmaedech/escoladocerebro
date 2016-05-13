@@ -1,0 +1,235 @@
+.color.truered{color:#FF0000;}   
+.color.truegreen{color:#39b54a;}
+.color.trueblue{color:#0000FF;}
+.color.trueyellow{color:#FFFF00;}
+.color.truecyan{color:#00FFFF;}
+.color.truemagenta{color:#FF00FF;}
+.color.trueblack{color:#000000;}
+.color.truegray{color:#808080;}
+.color.truedarkblue{color:#0000A0;}
+.color.truelightblue{color:#ADD8E6;}
+.color.truepurple{color:#800080;} 
+.color.truelime{color:#00FF00;} 
+.color.truesilver{color:#8299ce;}
+
+
+.color.trueorange{color:#FFA500;}
+.color.truebrown{color:#8c6239;}
+.color.truemaroon{color:#800000;}
+.color.trueolive{color:#808000;}
+.color.truefuchsia{color:#F012BE;}  
+.color.truemodern{color:#f86666;}
+.color.truegold{color:#f7931e;}
+
+//web
+.color.aqua{color:#7FDBFF;}
+.color.blue{color:#0074D9;}
+.color.navy{color:#001F3F;}
+.color.teal{color:#39CCCC;}
+.color.green{color:#2ECC40;}
+.color.olive{color:#3D9970;}
+.color.lime{color:#01FF70;}
+.color.maroon{color:#85144B;}
+.color.orange{color:#FF851B;}
+.color.purple{color:#B10DC9;}
+.color.red{color:#FF4136;}
+.color.yellow{color:#FFDC00;}
+.color.fuchsia{color:#F012BE;}
+.color.silver{color:#ddd;}
+.color.grey{color:#aaa;}
+.color.white{color:#fff;}
+.color.black{color:#111;}
+.color.modern{color:#f86666;}
+.color.gold{color:#ffbc00;}
+.color.darkblue{color:#0000A0;}
+//webdefaults
+.color.defaultaqua{color:aqua;}
+.color.defaultblack{color:black;}
+.color.defaultblue{color:blue;}
+.color.defaultfuchsia{color:fuchsia;}
+.color.defaultgray{color:gray;}
+.color.defaultgreen{color:green;}
+.color.defaultlime{color:lime;}
+.color.defaultmaroon{color:maroon;}
+.color.defaultnavy{color:navy;}
+.color.defaultolive{color:olive;}
+.color.defaultorange{color:orange;}
+.color.defaultpurple{color:purple;}
+.color.defaultred{color:red;}
+.color.defaultsilver{color:silver;}
+.color.defaultteal{color:teal;}
+.color.defaultwhite{color:white;}
+.color.defaultyellow{color:yellow;}
+.color.defaultmodern{color:#f86666;}
+.color.defaultgold{color:#ffbc00;}
+.color.defaultdarkblue{color:#0000A0;} 
+
+//big
+.color.aliceblue {color:#F0F8FF;}
+.color.antiquewhite {color:#FAEBD7;}
+.color.aqua {color:#00FFFF;}
+.color.aquamarine {color:#7FFFD4;}
+.color.azure {color:#F0FFFF;}
+.color.beige {color:#F5F5DC;}
+.color.bisque {color:#FFE4C4;}
+.color.black {color:#000000;}
+.color.blanchedalmond {color:#FFEBCD;}
+.color.blue {color:#0000FF;}
+.color.blueviolet {color:#8A2BE2;}
+.color.brown {color:#A52A2A;}
+.color.burlywood {color:#DEB887;}
+.color.cadetblue {color:#5F9EA0;}
+.color.chartreuse {color:#7FFF00;}
+.color.chocolate {color:#D2691E;}
+.color.coral {color:#FF7F50;}
+.color.cornflowerblue {color:#6495ED;}
+.color.cornsilk {color:#FFF8DC;}
+.color.crimson {color:#DC143C;}
+.color.cyan {color:#00FFFF;}
+.color.darkblue {color:#00008B;}
+.color.darkcyan {color:#008B8B;}
+.color.darkgoldenrod {color:#B8860B;}
+.color.darkgray {color:#A9A9A9;}
+.color.darkgreen {color:#006400;}
+.color.darkkhaki {color:#BDB76B;}
+.color.darkmagenta {color:#8B008B;}
+.color.darkolivegreen {color:#556B2F;}
+.color.darkorange {color:#FF8C00;}
+.color.darkorchid {color:#9932CC;}
+.color.darkred {color:#8B0000;}
+.color.darksalmon {color:#E9967A;}
+.color.darkseagreen {color:#8FBC8F;}
+.color.darkslateblue {color:#483D8B;}
+.color.darkslategray {color:#2F4F4F;}
+.color.darkturquoise {color:#00CED1;}
+.color.darkviolet {color:#9400D3;}
+.color.deeppink {color:#FF1493;}
+.color.deepskyblue {color:#00BFFF;}
+.color.dimgray {color:#696969;}
+.color.dodgerblue {color:#1E90FF;}
+.color.firebrick {color:#B22222;}
+.color.floralwhite {color:#FFFAF0;}
+.color.forestgreen {color:#228B22;}
+.color.fuchsia {color:#FF00FF;}
+.color.gainsboro {color:#DCDCDC;}
+.color.ghostwhite {color:#F8F8FF;}
+.color.gold {color:#FFD700;}
+.color.goldenrod {color:#DAA520;}
+.color.gray {color:#808080;}
+.color.green {color:#008000;}
+.color.greenyellow {color:#ADFF2F;}
+.color.honeydew {color:#F0FFF0;}
+.color.hotpink {color:#FF69B4;}
+.color.indianred  {color:#CD5C5C;}
+.color.indigo  {color:#4B0082;}
+.color.ivory {color:#FFFFF0;}
+.color.khaki {color:#F0E68C;}
+.color.lavender {color:#E6E6FA;}
+.color.lavenderblush {color:#FFF0F5;}
+.color.lawngreen {color:#7CFC00;}
+.color.lemonchiffon {color:#FFFACD;}
+.color.lightblue {color:#ADD8E6;}
+.color.lightcoral {color:#F08080;}
+.color.lightcyan {color:#E0FFFF;}
+.color.lightgoldenrodyellow {color:#FAFAD2;}
+.color.lightgray {color:#D3D3D3;}
+.color.lightgreen {color:#90EE90;}
+.color.lightpink {color:#FFB6C1;}
+.color.lightsalmon {color:#FFA07A;}
+.color.lightseagreen {color:#20B2AA;}
+.color.lightskyblue {color:#87CEFA;}
+.color.lightslategray {color:#778899;}
+.color.lightsteelblue {color:#B0C4DE;}
+.color.lightyellow {color:#FFFFE0;}
+.color.lime {color:#00FF00;}
+.color.limegreen {color:#32CD32;}
+.color.linen {color:#FAF0E6;}
+.color.magenta {color:#FF00FF;}
+.color.maroon {color:#800000;}
+.color.mediumaquamarine {color:#66CDAA;}
+.color.mediumblue {color:#0000CD;}
+.color.mediumorchid {color:#BA55D3;}
+.color.mediumpurple {color:#9370DB;}
+.color.mediumseagreen {color:#3CB371;}
+.color.mediumslateblue {color:#7B68EE;}
+.color.mediumspringgreen {color:#00FA9A;}
+.color.mediumturquoise {color:#48D1CC;}
+.color.mediumvioletred {color:#C71585;}
+.color.midnightblue {color:#191970;}
+.color.mintcream {color:#F5FFFA;}
+.color.mistyrose {color:#FFE4E1;}
+.color.moccasin {color:#FFE4B5;}
+.color.navajowhite {color:#FFDEAD;}
+.color.navy {color:#000080;}
+.color.oldlace {color:#FDF5E6;}
+.color.olive {color:#808000;}
+.color.olivedrab {color:#6B8E23;}
+.color.orange {color:#FFA500;}
+.color.orangered {color:#FF4500;}
+.color.orchid {color:#DA70D6;}
+.color.palegoldenrod {color:#EEE8AA;}
+.color.palegreen {color:#98FB98;}
+.color.paleturquoise {color:#AFEEEE;}
+.color.palevioletred {color:#DB7093;}
+.color.papayawhip {color:#FFEFD5;}
+.color.peachpuff {color:#FFDAB9;}
+.color.peru {color:#CD853F;}
+.color.pink {color:#FFC0CB;}
+.color.plum {color:#DDA0DD;}
+.color.powderblue {color:#B0E0E6;}
+.color.purple {color:#800080;}
+.color.red {color:#FF0000;}
+.color.rosybrown {color:#BC8F8F;}
+.color.royalblue {color:#4169E1;}
+.color.saddlebrown {color:#8B4513;}
+.color.salmon {color:#FA8072;}
+.color.sandybrown {color:#F4A460;}
+.color.seagreen {color:#2E8B57;}
+.color.seashell {color:#FFF5EE;}
+.color.sienna {color:#A0522D;}
+.color.silver {color:#C0C0C0;}
+.color.skyblue {color:#87CEEB;}
+.color.slateblue {color:#6A5ACD;}
+.color.slategray {color:#708090;}
+.color.snow {color:#FFFAFA;}
+.color.springgreen {color:#00FF7F;}
+.color.steelblue {color:#4682B4;}
+.color.tan {color:#D2B48C;}
+.color.teal {color:#008080;}
+.color.thistle {color:#D8BFD8;}
+.color.tomato {color:#FF6347;}
+.color.turquoise {color:#40E0D0;}
+
+//flat
+.color.turquoise {color: #1ABC9C;}
+.color.greensea {color: #16A085;}
+.color.emerland {color: #2ECC71;}
+.color.nephritis {color: #27AE60;}
+.color.peterriver {color: #3498DB;}
+.color.belizehole {color: #2980B9;}
+.color.amethyst {color: #9B59B6;}
+.color.wisteria {color: #8E44AD;}
+.color.wetasphalt {color: #34495E;}
+.color.midnightblue {color: #2C3E50;}
+.color.sunflower {color: #F1C40F;}
+.color.orange {color: #F39C12;}
+.color.carrot {color: #E67E22;}
+.color.pumpkin {color: #D35400;}
+.color.alizarin {color: #E74C3C;}
+.color.pomegranate {color: #C0392B;}
+.color.clouds {color: #C63D0F; }
+.color.silver {color: #BDC3C7;}
+.color.concrete {color: #95A5A6;}
+.color.asbestos {color: #7F8C8D;}
+ 
+
+
+// ┌────────────────────────────────────────────────────────────────────┐ \\
+// │ Escola do Cérebro 1.0.0 - Educational Game Library                 │ \\
+// ├────────────────────────────────────────────────────────────────────┤ \\
+// │ Copyright © 2013-2014 Cognisense Tecnologia Ltda                   │ \\
+// │ Copyright © 2014 EduSCADA Labs (http://eduscada.com)               │ \\
+// ├────────────────────────────────────────────────────────────────────┤ \\
+// │ Licensed under the MIT (http://cognisense.com.br/license.html)     │ \\
+// └────────────────────────────────────────────────────────────────────┘ \\
+ 

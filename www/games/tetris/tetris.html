@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Tetris</title> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="author" content="Cognisense Tecnologia Ltda">  
+        <meta name="keywords" content="Games Escola do Cérebro Cognisense Tecnologia UFSC jogos educativos games pesquisa aplicação" /> 
+        <meta name="description" content="Games Escola do Cérebro" />   
+
+        <script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="script/jquery-resize.js"></script>
+
+        <style type="text/css">
+
+            body, html
+            {
+                margin: 0 auto;
+                text-align: center;
+                padding: 0;
+                overflow: hidden;
+                background-color: transparent;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+
+            #background
+            {
+                position: absolute;
+                /*background-image: url('assets/game-background.png');*/
+                background-size: 100% 100%;
+                width: 527px;
+                height: 348px;
+            }
+
+            #game { position: absolute; left:192px; top:0px; width:144px; height:348px; overflow:hidden;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none; }
+
+            #game-help { z-index:10; position: absolute; left:0px; top:0px; width:527px; height:348px; overflow:hidden; }
+
+            #game-ui { z-index:8; position: absolute; left:0px; top:0px; width:527px; height:348px; overflow:hidden; }
+            #game-ui div {background-repeat: no-repeat; background-position: center center;cursor: pointer }
+
+            #game-difficulty { z-index:9; position: absolute; left:0px; top:0px; width:527px; height:348px; overflow:hidden; }
+            /*
+            #log
+            {
+                    position: absolute;
+                    background-color:#333;
+                    color:#fff;
+                    right: 20px;
+                    top: 20px;
+            }
+            */
+            .cell
+            {
+                position: absolute;
+                background-color: #CEEBEF;
+                border: solid 1px #747778;
+            }
+
+            .inactive-cell
+            {
+                position: absolute;
+                background-color: #666;
+                border: solid 1px #747778;
+            }
+
+            .block
+            {
+                position: absolute;
+                background-color: #666;
+                border: solid 1px #999;
+            }
+
+        </style>
+
+        <script type="text/javascript">
+
+            (function ($)
+            {
+                $.fn.left = function (value)
+                {
+                    if (value != undefined)
+                    {
+                        this.css('left', value);
+                        return this;
+                    }
+                    else
+                        return parseInt(this.css('left').replace('px', ''));
+                };
+
+                $.fn.top = function (value)
+                {
+                    if (value != undefined)
+                    {
+                        this.css('top', value);
+                        return this;
+                    }
+                    else
+                        return parseInt(this.css('top').replace('px', ''));
+                };
+            }
+            (jQuery));
+
+        </script>
+
+        <script type="text/javascript">
+
+            var BackgroundUtil = {};
+
+            BackgroundUtil.SetBackgroundImage = function (element, sourceName)
+            {
+                //console.log(sourceName+' -> '+B64Assets[sourceName])
+                //console.log('SetBackgroundImage -> '+sourceName);
+                $(element).css('background-image', 'url(\'' + 'assets/' + sourceName + '.png' + '\') ');
+                //$(element).css('background-image', 'url(\'' + 'data:image/png;base64,' + B64Assets[sourceName] + '\')');
+                // $(element).css('background-image', 'url(\'' + 'data:image/png;base64,' + B64Assets[sourceName] + '\')');
+                $(element).css('background-size', '100% 100%');
+            }
+
+            $(function ()
+            {
+                initTouchHandler();
+            });
+
+            function touchHandler(event)
+            {
+                var touch = event.changedTouches[0];
+
+                var simulatedEvent = document.createEvent("MouseEvent");
+                simulatedEvent.initMouseEvent({
+                    touchstart: "mousedown",
+                    touchmove: "mousemove",
+                    touchend: "mouseup"
+                }[event.type], true, true, window, 1,
+                        touch.screenX, touch.screenY,
+                        touch.clientX, touch.clientY, false,
+                        false, false, false, 0, null);
+
+                touch.target.dispatchEvent(simulatedEvent);
+                event.preventDefault();
+            }
+
+            function initTouchHandler()
+            {
+                document.getElementById('game-ui').addEventListener("touchstart", touchHandler, true);
+                document.getElementById('game-ui').addEventListener("touchmove", touchHandler, true);
+                document.getElementById('game-ui').addEventListener("touchend", touchHandler, true);
+                document.getElementById('game-ui').addEventListener("touchcancel", touchHandler, true);
+            }
+
+        </script>
+        <script src="script/tetris.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="background"></div>
+
+        <div id="game">
+        </div>
+        <div id="game-help">
+        </div>
+        <div id="game-difficulty">
+        </div>
+        <div id="game-ui">
+        </div>
+
+        <script type="text/javascript" src="TetrisAssets"></script>
+
+    </body>
+</html>
+<!--
+<pre id="log">
+</pre>
+-->
+<!--
+<div id="c0">
+    <span id="c1">
+            <div id="gameContainer">
+                
+            </div>
+    </span>
+</div>
+-->

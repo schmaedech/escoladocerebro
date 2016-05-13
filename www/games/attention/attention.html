@@ -1,0 +1,195 @@
+<!DOCTYPE html> 
+<html>
+    <head> 
+        <title>Psicoteste Atenção</title> 
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">  
+        <meta name="description" content="Escola do Cérebro" />
+        <meta name="keywords" content="cognisense, education, braingames, games, cognitive, seriousgames, escola do cérebro, escola, games digitais, educação, pedagogia" />
+        <meta name="author" content="Escola do Cérebro" />  
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+        <link href="../../bower_components/pace/themes/white/pace-theme-minimal.css" rel="stylesheet" type="text/css"/>
+        <link href="../../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../bower_components/nvd3/build/nv.d3.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
+
+        <link href="../../css/app.css" rel="stylesheet" type="text/css">  
+        
+        <!-- build:js scripts/main.js --> 
+        <script src="../../bower_components/pace/pace.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js" type="text/javascript"></script>  
+        <script src="../../bower_components/d3/d3.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/nvd3/build/nv.d3.min.js" type="text/javascript"></script> 
+        <script src="../../bower_components/sparkline/dist/jquery.sparkline.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/moment/min/moment-with-locales.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/angular/angular.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="../../bower_components/amcharts/dist/amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../../bower_components/amcharts/dist/amcharts/serial.js" type="text/javascript"></script>
+        <script src="../../bower_components/amcharts/dist/amcharts/themes/light.js" type="text/javascript"></script>
+       
+        <link href="../../css/psicotest.css" rel="stylesheet" type="text/css"/>
+
+        <script src="attention.js" type="text/javascript"></script>
+
+    </head> 
+    <body>  
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-T" aria-expanded="false" aria-controls="navbar-T">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand "   ></div>
+
+                </div>
+                <div id="navbar-T" class="navbar-collapse collapse ">
+
+                    <ul class="nav navbar-nav hidden">
+                        <li role="presentation" class="active">
+                            <a href="#" class="btn  ">FASE  <span   id="state" class="badge">1 </span> </a><br>
+                            <a href="#" class="btn  ">PONTOS  <span  id="points" class="badge">0 </span> </a>
+                            <br>
+                        </li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right hidden">
+
+                        <li role="presentation" >
+                            <a href="#" class="btn time "> <img src="../../img/icone_times.png" alt=""  />  <span  id="time" class="badge">0 </span> </a>
+
+                        </li>
+
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+
+        <div class="container">
+
+            <div class="jumbotron hello">
+                <div class="baloon baloon-left  " > 
+                    <div class="baloon-baloon" >  
+
+                        <h2 class=" baloon-label">  
+                            Nesse game seu desafio é localizar e clicar em todas as figuras iguais a que aparece na parte superior da tela. 
+                        </h2>
+                        <button class="btn btn-primary btn-lg pull-right"  id="btn_start_test">COMEÇAR</button>
+                    </div>  
+
+                </div>
+                <img src="../../img/icon_user_profile.png" alt="" class="robot"/>
+
+                <div class="btn-group btn-toggle footer-test hidden"> 
+                    <button class="btn btn-xs btn-default active">APLICAÇÃO</button>
+                    <button class="btn btn-xs btn-danger ">TESTE</button>
+                </div>
+
+            </div>
+            <div id="test_model_1" class="jumbotron teste_model">
+
+                <div class="baloon baloon-left  " > 
+                    <div class="baloon-baloon" >  
+
+                        <h2 class="baloon-label">  
+                            Nesse game seu desafio é localizar e clicar em todas as figuras iguais a que aparece na parte superior da tela.
+                        </h2>
+                        <button class="btn btn-primary btn-lg pull-right btn_start_test" >COMEÇAR</button>
+                    </div>  
+                </div>
+                <img src="../../img/icon_user_profile.png" alt="" class="robot"/>
+
+            </div>
+            <div id="test_model_2" class="jumbotron teste_model">
+                <div class="baloon baloon-left  " > 
+                    <div class="baloon-baloon" >  
+
+                        <h2 class="baloon-label">  
+                            Nesse game seu desafio é localizar e clicar em todas as figuras iguais as duas que aparecem na parte superior da tela. 
+                        </h2>
+                        <button class="btn btn-primary btn-lg pull-right btn_start_test" >COMEÇAR</button>
+                    </div>  
+                </div>
+                <img src="../../img/icon_user_profile.png" alt="" class="robot"/>
+
+            </div>
+            <div id="test_model_3" class="jumbotron teste_model">
+                <div class="baloon baloon-left  " > 
+                    <div class="baloon-baloon" >  
+
+                        <h2 class="baloon-label">  
+                            Nesse game seu desafio é localizar e clicar em todas as figuras iguais as três que aparecem na parte superior da tela. 
+                        </h2>
+                        <button class="btn btn-primary btn-lg pull-right btn_start_test" >COMEÇAR</button>
+                    </div>  
+                </div>
+                <img src="../../img/icon_user_profile.png" alt="" class="robot"/>
+
+            </div>
+            <div id="test_model_end" class="jumbotron teste_model">
+                <div class="container">
+                    <h3>Suas estatísticas: </h3> 
+                    <div class="game-stats" data-game-stats-id="list-group-badges">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge total_times">0</span>
+                                Tempo total
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge total_points">0</span>
+                                Total de acertos
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge total_clicks">0</span>
+                                Número de tentativas
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+              
+            </div> 
+
+            <div class="stage center"> 
+                <div id="peaces-logo" class="peaces-logo center center-block row"  ></div>   
+                <div id="board" class="board"> </div>
+            </div>
+
+        </div>
+        
+        <a href="#" class="btn fa fa-close pull-right btn-margin"  data-toggle="modal" data-target="#confirm-delete"> </a><br>
+
+        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                       
+                        <h4 class="modal-title" id="myModalLabel">Atenção!</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Sair do teste? </p>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">NÃO</button>
+                        <a id="sair" class="btn btn-danger btn-ok" data-dismiss="modal">SIM</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>  
+</html>

@@ -1,0 +1,224 @@
+ 
+<nav class="nav"> 
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 right-bar" > 
+            <img src="img/button_back.png" alt="" class="btn-img pointer card-3" ng-click="goPath('viewG')"/> 
+
+
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title"> 
+            
+            <span class="title-label">  
+                {{title}}
+            </span>
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 left-bar"> 
+
+            <button class="btn fa fa-user" ng-click="goPath('viewP')">  </button>
+            <button class="btn fa fa-refresh "  ng-click="syncDash()"></button>  
+
+        </div>
+    </div> 
+</nav>
+
+<input id="userID" type="hidden" value="{{user.playerId}}"> 
+<input id="dashID" type="hidden" value="connectome"> 
+
+<section class="view view-4 container" >  
+
+    <div id="chartdiv"></div>
+    <script>
+                $(document).ready(function ($) {
+                    function renderRankingChart(data) {
+                        var chart;
+                        if (chart) {
+                            chart.clear();
+                        }
+                        $('#chartdiv').css("height", $(window).height() / 1.5);
+                        if (document.body) {
+                            //  document.body.style.backgroundColor = bgColor;
+                            //  document.body.style.backgroundImage = "url(" + bgImage + ")";
+                        }
+                        chart = AmCharts.makeChart("chartdiv", {
+                            "type": "serial",
+                            "theme": "light",
+                            "color": "#fff",
+                            "legend": {
+                                "horizontalGap": 10,
+                                "maxColumns": 1,
+                                "position": "right",
+                                "color": "#fff",
+                                "useGraphSettings": true,
+                                "markerSize": 10
+                            },
+                            "dataProvider": data,
+                            "valueAxes": [{
+                                    "stackType": "regular",
+                                    "axisAlpha": 0.5,
+                                    "gridAlpha": 0
+                                }],
+                            "graphs": [{
+                                    "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                                    "fillAlphas": 0.8,
+                                    "labelText": "[[value]]",
+                                    "lineAlpha": 0.3,
+                                    "title": "Acurácia",
+                                    "type": "column",
+                                    "color": "#000000",
+                                    "valueField": "acuracia"
+                                }, {
+                                    "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                                    "fillAlphas": 0.8,
+                                    "labelText": "[[value]]",
+                                    "lineAlpha": 0.3,
+                                    "title": "Velocidade",
+                                    "type": "column",
+                                    "color": "#000000",
+                                    "valueField": "velocidade"
+                                }, {
+                                    "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+                                    "fillAlphas": 0.8,
+                                    "labelText": "[[value]]",
+                                    "lineAlpha": 0.3,
+                                    "title": "Estabilidade",
+                                    "type": "column",
+                                    "color": "#000000",
+                                    "valueField": "estabilidade"
+                                }],
+                            "rotate": true,
+                            "categoryField": "jogador",
+                            "categoryAxis": {
+                                "gridPosition": "start",
+                                "axisAlpha": 0,
+                                "gridAlpha": 0,
+                                "color": "#fff",
+                                "position": "left"
+                            },
+                            "export": {
+                                "enabled": true
+                            }
+                        });
+
+                    }
+                    
+                    function getRankingChart(idgame, level, circle) {
+
+                        $.getJSON("https://escoladocerebro.org/eduscada/c/index.php/ec_query_players", {action: "list_points_ranking", idgame: idgame, level: level, circle: circle})
+                                .done(function (json) {
+                                    if (json !== null) {
+                                        var data = JSON.parse(json);
+                                        if (data !== null) {
+                                            renderRankingChart(data);
+                                            $('a').hide(); //discomment after buy 
+                                        } else {
+
+                                        }
+                                    }
+                                })
+                                .fail(function (jqxhr, textStatus, error) {
+                                    console.log("Você parece estar off-line!");
+                                });
+
+                    }
+ 
+                    function update( ) {
+                        var user = JSON.parse(window.localStorage['org.escoladocerebro.user'] || '{}');
+                        if ($("#circle option:selected").val() > 0) {
+                            getRankingChart($("#game option:selected").val(), $("#level option:selected").val(), user.group);
+                        } else {
+                            getRankingChart($("#game option:selected").val(), $("#level option:selected").val(), $("#circle option:selected").val());
+                        } 
+                    }
+
+                    function init( ) {
+
+                        $("#game").change(function ()
+                        {
+                            update( );
+                        });
+                        $("#level").change(function ()
+                        {
+                            update( );
+                        });
+                        $("#circle").change(function ()
+                        {
+                            update( );
+                        });
+
+
+                        update( );
+
+                    }
+
+                    init( );
+                });
+    </script>
+</section> 
+
+
+<div class="ranking-control "  >
+
+    <ul>
+        <li>
+            <div class="trophy"> 
+                <img class="trophy-img" src="img/icone_trofeu.png" alt=""/>
+                <span class="trophy-label">  
+                    {{dashboard.ngames}} JOGADAS
+                </span>
+            </div>
+        </li> 
+
+        <li>  
+            <span>  
+                Jogo
+            </span>
+            <select id="game">
+                <option value="connectome">connectome</option>  
+                <option value="joaninha">joaninha</option>  
+                <option value="breakout">breakout</option>  
+                <option value="looktable">looktable</option>  
+                <option value="tangran">tangran</option>  
+                <option value="genius">genius</option> 
+                <option value="tetris">tetris</option> 
+            </select>
+        </li>
+        <li>
+            <span>  
+                Grupo
+            </span>
+            <select id="circle">
+                <option value="0">Geral</option>  
+                <option value="1">Meu grupo</option>
+
+            </select>
+        </li>
+        <li>
+            <span>  
+                Nível
+            </span>
+            <select id="level">
+                <option value="0">Básico</option>
+                <option value="1">Intermediário</option>
+                <option value="2">Avançado</option> 
+            </select>
+        </li>
+
+    </ul>
+</div>
+<div class="baloon baloon-left card card-5 {{hidden}}" ng-click="closeAlert()"> 
+    <div class="baloon-baloon" >  
+        <button class="btn fa fa-close baloon-btn" ng-click="closeAlert()"></button>  
+
+        <span class="baloon-label">  
+            {{message}}
+
+        </span>
+
+        <button class="btn fa fa-refresh " ng-show="statePoints" ng-click="syncData()">Sincronizar</button>  
+
+        <button class="btn fa fa-gamepad " ng-show="!statePoints" ng-click="goPath('view1')">Jogar</button>  
+    </div> 
+
+</div>
