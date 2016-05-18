@@ -6,7 +6,7 @@
 
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 title"> 
-            
+
             <span class="title-label">  
                 Escolha um caminho! 
             </span>
@@ -16,11 +16,11 @@
                 <span class="h1">  
                     {{dashboard.ngames}} 
                 </span>
-                <!--                <img class="trophy-img" src="img/icone_trofeu.png" alt=""/>-->
-                <span class="trophy-label">  
+                 <span class="trophy-label">  
                     JOGADAS
                 </span>
             </div>
+            <button class="btn fa fa-unlock" ng-show="statePlayer" ng-click="logout()"><span class="hidden-sm hidden-xs">Sair</span></button> 
 
         </div>
     </div> 
@@ -30,16 +30,16 @@
 <section class="view view-g container" >  
     <div class="row">       
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view3')"> 
-             
+
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('viewP')"> 
-             
+
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view1')">    
-            
+
         </div> 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 h100" ng-click="goPath('view4')">       
-            
+
         </div> 
     </div>  
 </section> 

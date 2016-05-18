@@ -427,7 +427,7 @@ angular.module('myApp', ['ngRoute'])
                 $scope.measurements = JSON.parse(window.localStorage['org.escoladocerebro.measurements'] || '{}');
                 $scope.crypta = "https://escoladocerebro.org/crypta.php";
                 $scope.ec_query_players = 'https://escoladocerebro.org/eduscada/c/index.php/ec_query_players';
-                
+
                 $scope.cleanUser = function () {
 
                     $scope.statePlayer = false;
@@ -689,18 +689,18 @@ angular.module('myApp', ['ngRoute'])
 
                 };
                 console.log("USER: " + $scope.user.login + " " + $scope.user.pass + " " + $scope.user.adminLogin);
-                if ($scope.user.playerId > 0 && $scope.user.adminLogin ) {
+                if ($scope.user.playerId > 0 && $scope.user.adminLogin) {
                     $scope.statePlayer = true;
                 } else {
-                    $scope.statePlayer = false;
+                   
                     $scope.cleanUser();
                     $scope.showAlert("Digite login e senha para entrar ou se ainda não tem cadastro digite um login e senha e clique em Criar login");
                 }
                 if ($scope.user.adminId > 0) {
-                    $scope.stateAdmin = true; 
+                    $scope.stateAdmin = true;
                 } else {
                     $scope.stateAdmin = false;
-                } 
+                }
             }])
 
         .controller('ViewTCtrl', ['$scope', '$http', 'SettingsService', '$timeout', '$location', 'BackgroundService', function ($scope, $http, SettingsService, $timeout, $location, BackgroundService) {
@@ -939,6 +939,11 @@ angular.module('myApp', ['ngRoute'])
                     $scope.hidden = "hidden";
 
                 };
+                $scope.logout = function () {
+
+                    $scope.cleanUser();
+                    $location.path("viewL");
+                };
 
                 $scope.cleanUser = function () {
                     console.log("saindo..." + $scope.user);
@@ -1033,7 +1038,6 @@ angular.module('myApp', ['ngRoute'])
                     $scope.checkDash($scope.user.idusers);
 
                 } else {
-                    $scope.statePlayer = false;
                     $scope.cleanUser();
                 }
             }])
@@ -1056,19 +1060,14 @@ angular.module('myApp', ['ngRoute'])
                     $scope.hidden = "alert";
                 };
                 $scope.hide = function () {
-
                     $scope.hidden = "hidden";
                 };
                 $scope.showAlert = function (txt) {
                     $scope.hidden = "alert";
                     $scope.message = txt;
-
-                    console.log(txt)
                 };
                 $scope.closeAlert = function (txt) {
-
                     $scope.hidden = "hidden";
-
                 };
                 if (SettingsService.get('game')) {
                     $scope.gameIcon = "icone-" + SettingsService.get('game');
@@ -1726,13 +1725,9 @@ angular.module('myApp', ['ngRoute'])
                 $scope.showAlert = function (txt) {
                     $scope.hidden = "alert";
                     $scope.message = txt;
-
-                    console.log(txt)
                 };
                 $scope.closeAlert = function (txt) {
-
                     $scope.hidden = "hidden";
-
                 };
                 $scope.syncDash = function ( ) {
                     $scope.showAlert("Momentinho, vamos atualizar o ranking...");
@@ -1742,7 +1737,6 @@ angular.module('myApp', ['ngRoute'])
                     }, 300);
                 };
                 $scope.goPath = function (view) {
-
                     $location.path(view);
                 };
 
@@ -1856,11 +1850,12 @@ angular.module('myApp', ['ngRoute'])
                     window.localStorage['org.escoladocerebro.dashboard'] = JSON.stringify($scope.dashboard);
                     window.localStorage['org.escoladocerebro.dashboardall'] = JSON.stringify($scope.dashboardall);
                     $scope.showAlert("Nenhum jogador definido.");
+
                 };
                 if ($scope.user.playerId > 0) {
                     $scope.statePlayer = true;
                 } else {
-                    $scope.statePlayer = false;
+
                     $scope.cleanUser();
                 }
                 if ($scope.dashboard.ngames > 0) {
@@ -2008,7 +2003,7 @@ angular.module('myApp', ['ngRoute'])
                                         sampleWalker++;
                                         if (sampleLength === sampleWalker) {
                                             var measurements = [];
-                                            localStorage.setItem('org.escoladocerebro.measurements', JSON.stringify(measurements)); 
+                                            localStorage.setItem('org.escoladocerebro.measurements', JSON.stringify(measurements));
                                             $scope.$apply(function () {
                                                 $timeout(function () {
                                                     $scope.points = [];
